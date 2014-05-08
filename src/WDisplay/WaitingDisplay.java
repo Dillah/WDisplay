@@ -27,6 +27,7 @@ public class WaitingDisplay extends javax.swing.JFrame {
         Home.setVisible(false);
         Registrasi.setVisible(false);
         Login.setVisible(true);
+        Layout.setVisible(false);
         this.setSize(900, 700);
         this.setLocationRelativeTo(null);
         
@@ -79,15 +80,16 @@ public class WaitingDisplay extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         outputUmum = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         jScrollPane9 = new javax.swing.JScrollPane();
         outputGigi = new javax.swing.JTable();
-        jPanel8 = new javax.swing.JPanel();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        outputKandungan = new javax.swing.JTable();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        OutputAnak = new javax.swing.JTable();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
         lbNama = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -117,6 +119,18 @@ public class WaitingDisplay extends javax.swing.JFrame {
         Antrian = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        Layout = new javax.swing.JPanel();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -366,7 +380,9 @@ public class WaitingDisplay extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(outputUmum);
 
-        jButton2.setText("NEXT");
+        jButton2.setText("1");
+
+        jButton12.setText("jButton12");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -375,20 +391,24 @@ public class WaitingDisplay extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 559, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton12))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton12)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47))
         );
 
         jTabbedPane1.addTab("Poli Umum", jPanel5);
@@ -460,19 +480,19 @@ public class WaitingDisplay extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 555, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(139, Short.MAX_VALUE))
+                .addContainerGap(114, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         jTabbedPane1.addTab("Poli Gigi", jPanel7);
 
-        outputKandungan.setModel(new javax.swing.table.DefaultTableModel(
+        OutputAnak.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -529,85 +549,7 @@ public class WaitingDisplay extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane6.setViewportView(outputKandungan);
-
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 558, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(136, Short.MAX_VALUE))
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        jTabbedPane1.addTab("Poli Kandungan", jPanel8);
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane5.setViewportView(jTable1);
+        jScrollPane5.setViewportView(OutputAnak);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -616,17 +558,23 @@ public class WaitingDisplay extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 567, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addContainerGap(102, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         jTabbedPane1.addTab("Poli Anak", jPanel6);
+
+        jButton7.setText("jButton7");
+
+        jButton8.setText("jButton8");
+
+        jButton11.setText("jButton11");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -636,13 +584,30 @@ public class WaitingDisplay extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jTabbedPane1)
                 .addGap(121, 121, 121))
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton7)
+                .addGap(18, 18, 18)
+                .addComponent(jButton8)
+                .addGap(18, 18, 18)
+                .addComponent(jButton11)
+                .addGap(169, 169, 169))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel9Layout.createSequentialGroup()
+                            .addGap(19, 19, 19)
+                            .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel9Layout.createSequentialGroup()
+                            .addGap(17, 17, 17)
+                            .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jButton7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTabbedPane1)
-                .addGap(33, 33, 33))
+                .addContainerGap())
         );
 
         Home.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 750, 260));
@@ -848,6 +813,45 @@ public class WaitingDisplay extends javax.swing.JFrame {
                 .addContainerGap(299, Short.MAX_VALUE))
         );
 
+        Layout.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton9.setText("4");
+        Layout.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(245, 240, 196, 100));
+
+        jButton10.setText("2");
+        Layout.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(508, 240, 186, 100));
+
+        jLabel17.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        jLabel17.setText("2");
+        Layout.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 70, 30, 90));
+
+        jLabel18.setText("Atas nama");
+        Layout.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, -1, 10));
+
+        jLabel19.setText("Poli Mana");
+        Layout.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, -1, -1));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane3.setViewportView(jTextArea1);
+
+        Layout.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, 294, 195));
+
+        jPanel2.setBackground(new java.awt.Color(0, 51, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel22.setText("Nama Poli");
+        jPanel2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, -1, -1));
+
+        jLabel23.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel23.setText("2");
+        jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 30, 60));
+
+        jLabel24.setText("Nama Dokter");
+        jPanel2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, -1, -1));
+
+        Layout.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 200, 120));
+
         jMenu1.setText("F i l e");
 
         jMenuItem1.setText("Exit");
@@ -869,41 +873,51 @@ public class WaitingDisplay extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1485, Short.MAX_VALUE))
+                .addContainerGap(2171, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(Registrasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 1485, Short.MAX_VALUE)))
+                    .addGap(0, 2171, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(735, Short.MAX_VALUE)
+                    .addContainerGap(1078, Short.MAX_VALUE)
                     .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, 814, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(606, Short.MAX_VALUE)))
+                    .addContainerGap(949, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 652, Short.MAX_VALUE)
+                    .addGap(0, 995, Short.MAX_VALUE)
                     .addComponent(Antrian, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 652, Short.MAX_VALUE)))
+                    .addGap(0, 995, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 1027, Short.MAX_VALUE)
+                    .addComponent(Layout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 1028, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 680, Short.MAX_VALUE))
+                .addGap(0, 1024, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(Registrasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 700, Short.MAX_VALUE)))
+                    .addGap(0, 1044, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(309, Short.MAX_VALUE)
+                    .addContainerGap(481, Short.MAX_VALUE)
                     .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, 614, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(257, Short.MAX_VALUE)))
+                    .addContainerGap(429, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 372, Short.MAX_VALUE)
+                    .addGap(0, 544, Short.MAX_VALUE)
                     .addComponent(Antrian, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 373, Short.MAX_VALUE)))
+                    .addGap(0, 545, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 540, Short.MAX_VALUE)
+                    .addComponent(Layout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 540, Short.MAX_VALUE)))
         );
 
         pack();
@@ -916,7 +930,8 @@ public class WaitingDisplay extends javax.swing.JFrame {
                 a++;
             }
     }
-    
+   int UrutAngka =0; 
+   
     private void MendaftarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MendaftarActionPerformed
         // TODO add your handling code here:
          Petugas A = new Petugas();
@@ -1041,32 +1056,6 @@ public class WaitingDisplay extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void outputUmumMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_outputUmumMouseClicked
-        // TODO add your handling code here:
-        try{
-            int a = outputUmum.getSelectedRow();
-
-            if(a == -1)
-            {
-                return;
-            }
-            String Akun = (String) outputUmum.getValueAt(a, 0);
-            String isi = (String) outputUmum.getValueAt(a, 1);
-
-            
-        }catch(NullPointerException npe){
-            JOptionPane.showMessageDialog(null, "Maaf, Baris yang anda klik tidak memiliki data");
-        }catch(Throwable t){
-            JOptionPane.showMessageDialog(null, t.getMessage());
-        }
-        Home.setVisible(false);
-    }//GEN-LAST:event_outputUmumMouseClicked
-
-    private void outputUmumMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_outputUmumMousePressed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_outputUmumMousePressed
-
     private void PasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PasswordMouseClicked
         if(evt.getSource()==Password){
             Password.setText("");
@@ -1095,10 +1084,11 @@ public class WaitingDisplay extends javax.swing.JFrame {
         ResultSet rsq = null;
         String b = "Umum";
         try{
-            rsq=db.getData("select Nama,Alamat from pasien where Pasien.Poli ='"+b+"'");
+            rsq=db.getData("select NoUrut,Nama,Alamat from pasien where Pasien.Poli ='"+b+"'");
             while(rsq.next()){
-                outputUmum.setValueAt(rsq.getString("Nama"),a,0);
-                outputUmum.setValueAt(rsq.getString("Alamat"),a,1);
+                outputUmum.setValueAt(rsq.getString("NoUrut"),a,0);
+                outputUmum.setValueAt(rsq.getString("Nama"),a,1);
+                outputUmum.setValueAt(rsq.getString("Alamat"),a,2);
                 a++;
             }
             rsq.close();
@@ -1145,18 +1135,49 @@ public class WaitingDisplay extends javax.swing.JFrame {
         Database db = new Database();
 
         int a = 0;
+        
         ResultSet rsT = null;
         String b = "Umum";
+        if("Umum".equals(getPoli)){
         try{
-            rsT=db.getData("select Nama,Alamat from pasien where Pasien.Poli ='"+getPoli+"'");
+            rsT=db.getData("select NoUrut,Nama,Alamat from pasien where Pasien.Poli ='"+getPoli+"'");
             while(rsT.next()){
-                outputUmum.setValueAt(rsT.getString("Nama"),a,0);
-                outputUmum.setValueAt(rsT.getString("Alamat"),a,1);
+                outputUmum.setValueAt(rsT.getString("NoUrut"),a,0);
+                outputUmum.setValueAt(rsT.getString("Nama"),a,1);
+                outputUmum.setValueAt(rsT.getString("Alamat"),a,2);
                 a++;
             }
             rsT.close();
         }catch(Exception e){
             javax.swing.JOptionPane.showMessageDialog(null, "ERROR:"+e.getMessage());
+        }
+        }if("Gigi".equals(getPoli)){
+        try{
+            rsT=db.getData("select NoUrut,Nama,Alamat from pasien where Pasien.Poli ='"+getPoli+"'");
+            while(rsT.next()){
+                outputGigi.setValueAt(rsT.getString("NoUrut"),a,0);
+                outputGigi.setValueAt(rsT.getString("Nama"),a,1);
+                outputGigi.setValueAt(rsT.getString("Alamat"),a,2);
+                a++;
+            }
+            rsT.close();
+        }catch(Exception e){
+            javax.swing.JOptionPane.showMessageDialog(null, "ERROR:"+e.getMessage());
+        }
+        }
+        if("Anak".equals(getPoli)){
+        try{
+            rsT=db.getData("select NoUrut,Nama,Alamat from pasien where Pasien.Poli ='"+getPoli+"'");
+            while(rsT.next()){
+                OutputAnak.setValueAt(rsT.getString("NoUrut"),a,0);
+                OutputAnak.setValueAt(rsT.getString("Nama"),a,1);
+                OutputAnak.setValueAt(rsT.getString("Alamat"),a,2);
+                a++;
+            }
+            rsT.close();
+        }catch(Exception e){
+            javax.swing.JOptionPane.showMessageDialog(null, "ERROR:"+e.getMessage());
+        }
         }
 
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -1168,6 +1189,30 @@ public class WaitingDisplay extends javax.swing.JFrame {
     private void PoliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PoliActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_PoliActionPerformed
+
+    private void outputUmumMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_outputUmumMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_outputUmumMousePressed
+
+    private void outputUmumMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_outputUmumMouseClicked
+        // TODO add your handling code here:
+        try{
+            int a = outputUmum.getSelectedRow();
+
+            if(a == -1)
+            {
+                return;
+            }
+            String Akun = (String) outputUmum.getValueAt(a, 0);
+            String isi = (String) outputUmum.getValueAt(a, 1);
+
+        }catch(NullPointerException npe){
+            JOptionPane.showMessageDialog(null, "Maaf, Baris yang anda klik tidak memiliki data");
+        }catch(Throwable t){
+            JOptionPane.showMessageDialog(null, t.getMessage());
+        }
+        Home.setVisible(false);
+    }//GEN-LAST:event_outputUmumMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1217,12 +1262,14 @@ public class WaitingDisplay extends javax.swing.JFrame {
     private javax.swing.JTextArea Keluhan;
     private javax.swing.JRadioButton Laki;
     private javax.swing.JTextField LastName;
+    private javax.swing.JPanel Layout;
     private javax.swing.JPanel Login;
     private javax.swing.JRadioButton Male;
     private javax.swing.JButton Masuk;
     private javax.swing.JButton Mendaftar;
     private javax.swing.JTextField NIK;
     private javax.swing.JTextField Nama;
+    private javax.swing.JTable OutputAnak;
     private javax.swing.JPasswordField Password;
     private javax.swing.JPasswordField PasswordF;
     private javax.swing.JRadioButton Perempuan;
@@ -1232,11 +1279,17 @@ public class WaitingDisplay extends javax.swing.JFrame {
     private javax.swing.JTextField Username;
     private javax.swing.JLabel hard;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1245,9 +1298,15 @@ public class WaitingDisplay extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
@@ -1264,26 +1323,25 @@ public class WaitingDisplay extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lbNama;
     private javax.swing.JLabel low;
     private javax.swing.JLabel normal;
     private javax.swing.JTable outputGigi;
-    private javax.swing.JTable outputKandungan;
     private javax.swing.JTable outputUmum;
     private javax.swing.JTextField userName;
     // End of variables declaration//GEN-END:variables
