@@ -1001,7 +1001,7 @@ public class WaitingDisplay extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
    private void setNullOutput(){
     int a = 0;
-    while( a != 30){
+    while( a != 20){
                 outputUmum.setValueAt("",a,0);
                 outputUmum.setValueAt("",a,1);
                 a++;
@@ -1009,7 +1009,7 @@ public class WaitingDisplay extends javax.swing.JFrame {
     }
    private void setNullOutputGigi(){
     int a = 0;
-    while( a != 30){
+    while( a != 20){
                 outputGigi.setValueAt("",a,0);
                 outputGigi.setValueAt("",a,1);
                 a++;
@@ -1017,7 +1017,7 @@ public class WaitingDisplay extends javax.swing.JFrame {
     }
    private void setNullAnak(){
     int a = 0;
-    while( a != 30){
+    while( a != 20){
                 OutputAnak.setValueAt("",a,0);
                 OutputAnak.setValueAt("",a,1);
                 a++;
