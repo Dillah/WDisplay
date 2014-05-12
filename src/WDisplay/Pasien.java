@@ -13,12 +13,15 @@ import java.sql.ResultSet;
 public class Pasien {
 
     private String Nama,Poli,JK,Alamat,Keluhan;
-    private int NIK, Umur;
+    private int NoUrut, NIK, Umur;
     
     public Pasien(){
         
     }
 
+    public int NoUrut(){
+        return NoUrut;
+    }
     public String getNama() {
         return Nama;
     }
@@ -80,14 +83,14 @@ public class Pasien {
     public void saveData(){
         Database db = new Database();
         String s;
-        s = "insert into pasien values ('"+this.Poli+"','"+this.NIK+"','"+this.JK+"','"+this.Nama+"','"+this.Alamat+"','"+this.Keluhan+"','"+this.Umur+"')";
+        s = "insert into pasien values ('"+this.NoUrut+"','"+this.Poli+"','"+this.NIK+"','"+this.JK+"','"+this.Nama+"','"+this.Alamat+"','"+this.Keluhan+"','"+this.Umur+"')";
         db.query(s);
         }
         public ResultSet getData(){
         ResultSet result = null;
         Database db= new Database();
         String s;
-        s = "insert into pasien values ('"+this.Poli+"','"+this.NIK+"','"+this.JK+"','"+this.Nama+"','"+this.Alamat+"','"+this.Keluhan+"','"+this.Umur+"')";
+        s = "insert into pasien values ('"+this.NoUrut+"','"+this.Poli+"','"+this.NIK+"','"+this.JK+"','"+this.Nama+"','"+this.Alamat+"','"+this.Keluhan+"','"+this.Umur+"')";
         db.query(s);
         return result;
         }    
