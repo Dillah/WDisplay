@@ -6,11 +6,13 @@
 
 package WDisplay;
 
+
 import java.awt.Color;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,20 +20,25 @@ import javax.swing.JOptionPane;
  * @author Display
  */
 public class WaitingDisplay extends javax.swing.JFrame {
+    /*private final JLabel parameter;  */
 
     /**
      * Creates new form WaitingDisplay
      */
+    
+    String g,h,l;
+    Layout obj2 = new Layout(g,h,l);
+    
+    
     public WaitingDisplay() {
         initComponents();
-        Home.setVisible(false);
-        Registrasi.setVisible(false);
-        Login.setVisible(true);
-        this.setSize(900, 700);
+        this.UrutAngka = 0;
+        this.setSize(850,700);
         this.setLocationRelativeTo(null);
-        
+        Antrian.setVisible(false);
     }
-
+   
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -41,13 +48,46 @@ public class WaitingDisplay extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel11 = new javax.swing.JPanel();
+        jFrame1 = new javax.swing.JFrame();
+        Layout = new javax.swing.JPanel();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        Grup = new javax.swing.ButtonGroup();
+        Grup2 = new javax.swing.ButtonGroup();
+        jLabel28 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
         Login = new javax.swing.JPanel();
+        Daftar = new javax.swing.JButton();
+        jLabel30 = new javax.swing.JLabel();
         Username = new javax.swing.JTextField();
         Password = new javax.swing.JPasswordField();
-        Daftar = new javax.swing.JButton();
-        Masuk = new javax.swing.JButton();
+        jLabel29 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
+        View = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        DPoli = new javax.swing.JTextField();
+        DNama = new javax.swing.JTextField();
+        DNIK = new javax.swing.JTextField();
+        DJK = new javax.swing.JTextField();
+        DUmur = new javax.swing.JTextField();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        DAlamat = new javax.swing.JTextArea();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        DKeluhan = new javax.swing.JTextArea();
+        Back = new javax.swing.JButton();
+        jLabel26 = new javax.swing.JLabel();
         Registrasi = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         FirstName = new javax.swing.JTextField();
@@ -63,8 +103,6 @@ public class WaitingDisplay extends javax.swing.JFrame {
         low = new javax.swing.JLabel();
         normal = new javax.swing.JLabel();
         hard = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        Birth = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         userName = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
@@ -78,21 +116,24 @@ public class WaitingDisplay extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         outputUmum = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         jScrollPane9 = new javax.swing.JScrollPane();
         outputGigi = new javax.swing.JTable();
-        jPanel8 = new javax.swing.JPanel();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        outputKandungan = new javax.swing.JTable();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jLabel15 = new javax.swing.JLabel();
-        lbNama = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        OutputAnak = new javax.swing.JTable();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        LabelNama = new javax.swing.JLabel();
+        LabelUrutan = new javax.swing.JLabel();
+        LabelPoli = new javax.swing.JLabel();
+        Refresh = new javax.swing.JButton();
+        Reset = new javax.swing.JButton();
+        DataPPoli = new javax.swing.JTextField();
+        DataPNama = new javax.swing.JTextField();
+        label = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
-        jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         Nama = new javax.swing.JTextField();
@@ -112,35 +153,102 @@ public class WaitingDisplay extends javax.swing.JFrame {
         Umur = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
         Poli = new javax.swing.JComboBox();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        lbNama = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
         Antrian = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 395, Short.MAX_VALUE)
+        Layout.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton9.setText("4");
+        Layout.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(245, 240, 196, 100));
+
+        jButton10.setText("2");
+        Layout.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(508, 240, 186, 100));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane3.setViewportView(jTextArea1);
+
+        Layout.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, 294, 195));
+
+        jPanel2.setBackground(new java.awt.Color(0, 51, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel22.setText("Nama Poli");
+        jPanel2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, -1, -1));
+
+        jLabel23.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel23.setText("2");
+        jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 30, 60));
+
+        jLabel24.setText("Nama Dokter");
+        jPanel2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, -1, -1));
+
+        Layout.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 200, 120));
+
+        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
+        jFrame1.getContentPane().setLayout(jFrame1Layout);
+        jFrame1Layout.setHorizontalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 694, Short.MAX_VALUE)
+            .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jFrame1Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(Layout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 181, Short.MAX_VALUE)
+        jFrame1Layout.setVerticalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 350, Short.MAX_VALUE)
+            .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jFrame1Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(Layout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
+
+        jLabel28.setText("jLabel28");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Book Ch@ D3 If 36 01");
 
+        jPanel4.setLayout(new java.awt.CardLayout());
+
         Login.setPreferredSize(new java.awt.Dimension(670, 500));
         Login.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        Daftar.setBackground(new java.awt.Color(255, 255, 255));
+        Daftar.setFont(new java.awt.Font("SansSerif", 0, 11)); // NOI18N
+        Daftar.setForeground(new java.awt.Color(0, 0, 255));
+        Daftar.setText("Sign Up");
+        Daftar.setPreferredSize(new java.awt.Dimension(71, 23));
+        Daftar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DaftarActionPerformed(evt);
+            }
+        });
+        Login.add(Daftar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 80, 25));
+
+        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/UI_login_btn.png"))); // NOI18N
+        jLabel30.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel30.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel30MouseClicked(evt);
+            }
+        });
+        Login.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 400, -1, -1));
+
+        Username.setBackground(new java.awt.Color(225, 225, 225));
+        Username.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         Username.setForeground(new java.awt.Color(204, 204, 204));
         Username.setText("U s e r n a m e");
+        Username.setBorder(null);
         Username.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 UsernameMouseClicked(evt);
@@ -151,10 +259,13 @@ public class WaitingDisplay extends javax.swing.JFrame {
                 UsernameActionPerformed(evt);
             }
         });
-        Login.add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, 170, -1));
+        Login.add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 350, 50));
 
+        Password.setBackground(new java.awt.Color(225, 225, 225));
+        Password.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         Password.setForeground(new java.awt.Color(204, 204, 204));
         Password.setText("paswordcvn");
+        Password.setBorder(null);
         Password.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 PasswordMouseClicked(evt);
@@ -165,35 +276,77 @@ public class WaitingDisplay extends javax.swing.JFrame {
                 PasswordActionPerformed(evt);
             }
         });
-        Login.add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 280, 170, -1));
+        Login.add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, 350, 50));
 
-        Daftar.setBackground(new java.awt.Color(144, 151, 210));
-        Daftar.setFont(new java.awt.Font("Trajan Pro", 0, 11)); // NOI18N
-        Daftar.setForeground(new java.awt.Color(255, 255, 255));
-        Daftar.setText("Sign Up");
-        Daftar.setPreferredSize(new java.awt.Dimension(71, 23));
-        Daftar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DaftarActionPerformed(evt);
-            }
-        });
-        Login.add(Daftar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 390, 80, 25));
-
-        Masuk.setBackground(new java.awt.Color(51, 153, 0));
-        Masuk.setFont(new java.awt.Font("Trajan Pro", 0, 11)); // NOI18N
-        Masuk.setForeground(new java.awt.Color(255, 255, 255));
-        Masuk.setText("Log In");
-        Masuk.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MasukActionPerformed(evt);
-            }
-        });
-        Login.add(Masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 350, 80, -1));
+        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/UI_login.png"))); // NOI18N
+        Login.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 0, 830, 590));
 
         jLabel20.setMaximumSize(new java.awt.Dimension(700, 550));
         jLabel20.setMinimumSize(new java.awt.Dimension(700, 550));
         jLabel20.setPreferredSize(new java.awt.Dimension(700, 550));
         Login.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, 720, 560));
+
+        jPanel4.add(Login, "card5");
+
+        View.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setText("Nama");
+        View.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
+
+        jLabel15.setText("NIK");
+        View.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
+
+        jLabel17.setText("Alamat");
+        View.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, -1, -1));
+
+        jLabel18.setText("Jenis Kelamin");
+        View.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
+
+        jLabel19.setText("Umur");
+        View.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
+
+        jLabel25.setText("Keluhan");
+        View.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, -1, -1));
+
+        jLabel27.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel27.setText("Data Pasien");
+        View.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(255, 11, -1, -1));
+        View.add(DPoli, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 181, -1));
+        View.add(DNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 181, -1));
+        View.add(DNIK, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 181, -1));
+
+        DJK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DJKActionPerformed(evt);
+            }
+        });
+        View.add(DJK, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 181, -1));
+        View.add(DUmur, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 180, -1));
+
+        DAlamat.setColumns(20);
+        DAlamat.setRows(5);
+        jScrollPane6.setViewportView(DAlamat);
+
+        View.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 260, 100));
+
+        DKeluhan.setColumns(20);
+        DKeluhan.setRows(5);
+        jScrollPane7.setViewportView(DKeluhan);
+
+        View.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 170, 260, 100));
+
+        Back.setText("Back");
+        Back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackActionPerformed(evt);
+            }
+        });
+        View.add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, 80, 50));
+
+        jLabel26.setText("Poli");
+        View.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
+
+        jPanel4.add(View, "card2");
 
         Registrasi.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -213,13 +366,13 @@ public class WaitingDisplay extends javax.swing.JFrame {
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
 
         jLabel6.setText("Address");
-        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
 
         jLabel7.setText("Gender");
-        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
 
         jLabel8.setText("Password");
-        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
+        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
 
         Mendaftar.setBackground(new java.awt.Color(255, 255, 255));
         Mendaftar.setFont(new java.awt.Font("Trajan Pro", 0, 11)); // NOI18N
@@ -229,25 +382,27 @@ public class WaitingDisplay extends javax.swing.JFrame {
                 MendaftarActionPerformed(evt);
             }
         });
-        jPanel3.add(Mendaftar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, -1, -1));
+        jPanel3.add(Mendaftar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, -1, -1));
 
+        Grup2.add(Male);
         Male.setText("Male");
         Male.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MaleActionPerformed(evt);
             }
         });
-        jPanel3.add(Male, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, -1, -1));
+        jPanel3.add(Male, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, -1, -1));
 
+        Grup2.add(Female);
         Female.setText("Female");
-        jPanel3.add(Female, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, -1, -1));
+        jPanel3.add(Female, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, -1, -1));
 
         PasswordF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 PasswordFKeyReleased(evt);
             }
         });
-        jPanel3.add(PasswordF, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 160, -1));
+        jPanel3.add(PasswordF, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 160, -1));
 
         jButton3.setFont(new java.awt.Font("Trajan Pro", 0, 11)); // NOI18N
         jButton3.setText("LogIn");
@@ -261,35 +416,40 @@ public class WaitingDisplay extends javax.swing.JFrame {
         jPanel3.add(normal, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, 60, 20));
         jPanel3.add(hard, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, 40, 20));
 
-        jLabel1.setText("Date of Birth");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, -1));
-        jPanel3.add(Birth, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 160, -1));
-
         jLabel16.setText("Username");
-        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
-        jPanel3.add(userName, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 160, -1));
+        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));
+        jPanel3.add(userName, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 160, -1));
 
         jLabel21.setText("Last Name");
-        jPanel3.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, -1, -1));
+        jPanel3.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, -1));
         jPanel3.add(LastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 160, -1));
 
         Address.setColumns(20);
         Address.setRows(5);
         jScrollPane10.setViewportView(Address);
 
-        jPanel3.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 230, 40));
+        jPanel3.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 230, 70));
 
         Registrasi.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 390, 360));
         Registrasi.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, -1));
 
-        Home.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel4.add(Registrasi, "card4");
+
+        Home.setBackground(new java.awt.Color(51, 153, 255));
         Home.setMinimumSize(new java.awt.Dimension(800, 700));
         Home.setPreferredSize(new java.awt.Dimension(683, 560));
         Home.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel9.setBackground(new java.awt.Color(102, 255, 255));
+        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
         jPanel9.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel9.setPreferredSize(new java.awt.Dimension(620, 200));
+        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTabbedPane1MouseClicked(evt);
+            }
+        });
 
         outputUmum.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -345,7 +505,7 @@ public class WaitingDisplay extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "NIK", "Nama", "JK"
+                "No Antrian", "Nama", "JK"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -360,13 +520,8 @@ public class WaitingDisplay extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 outputUmumMouseClicked(evt);
             }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                outputUmumMousePressed(evt);
-            }
         });
         jScrollPane1.setViewportView(outputUmum);
-
-        jButton2.setText("NEXT");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -375,82 +530,80 @@ public class WaitingDisplay extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 559, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47))
         );
 
         jTabbedPane1.addTab("Poli Umum", jPanel5);
 
         outputGigi.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "No Antrian", "Nama", "JK"
             }
         ));
-        outputGigi.setPreferredSize(new java.awt.Dimension(225, 800));
+        outputGigi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                outputGigiMouseClicked(evt);
+            }
+        });
         jScrollPane9.setViewportView(outputGigi);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -460,154 +613,81 @@ public class WaitingDisplay extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 555, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(139, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         jTabbedPane1.addTab("Poli Gigi", jPanel7);
 
-        outputKandungan.setModel(new javax.swing.table.DefaultTableModel(
+        OutputAnak.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "No Antrian", "Nama", "JK"
             }
         ));
-        jScrollPane6.setViewportView(outputKandungan);
-
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 558, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(136, Short.MAX_VALUE))
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        jTabbedPane1.addTab("Poli Kandungan", jPanel8);
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+        OutputAnak.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OutputAnakMouseClicked(evt);
             }
-        ));
-        jScrollPane5.setViewportView(jTable1);
+        });
+        jScrollPane5.setViewportView(OutputAnak);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -615,61 +695,84 @@ public class WaitingDisplay extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 567, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 559, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         jTabbedPane1.addTab("Poli Anak", jPanel6);
 
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane1)
-                .addGap(121, 121, 121))
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(jTabbedPane1)
-                .addGap(33, 33, 33))
-        );
+        jPanel9.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 55, -1, -1));
 
-        Home.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 750, 260));
-
-        jLabel15.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel15.setFont(new java.awt.Font("Segoe Print", 0, 18)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("Selamat datang ");
-        Home.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-
-        lbNama.setFont(new java.awt.Font("Miriam Fixed", 0, 18)); // NOI18N
-        lbNama.setForeground(new java.awt.Color(255, 255, 255));
-        Home.add(lbNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 67, 30));
-
-        jButton1.setBackground(new java.awt.Color(0, 255, 153));
-        jButton1.setFont(new java.awt.Font("Trajan Pro", 0, 11)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 0, 0));
-        jButton1.setText("LogOut");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButton7.setBackground(new java.awt.Color(0, 0, 255));
+        jButton7.setForeground(new java.awt.Color(255, 255, 255));
+        jButton7.setText("NEXT UMUM");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButton7ActionPerformed(evt);
             }
         });
-        Home.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 30, -1, -1));
+        jPanel9.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(608, 81, 140, 33));
 
-        jLabel34.setFont(new java.awt.Font("Vani", 1, 14)); // NOI18N
-        jLabel34.setText("Registrasi Pasien");
+        jButton8.setBackground(new java.awt.Color(0, 255, 0));
+        jButton8.setText("NEXT GIGI");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        jPanel9.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(608, 125, 140, 34));
+
+        jButton11.setBackground(new java.awt.Color(255, 51, 204));
+        jButton11.setText("NEXT ANAK");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+        jPanel9.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(608, 170, 140, 32));
+
+        LabelNama.setText("Nama");
+        jPanel9.add(LabelNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 40, -1, 20));
+
+        LabelUrutan.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        LabelUrutan.setText("0");
+        jPanel9.add(LabelUrutan, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, 55, -1));
+
+        LabelPoli.setText("Poli");
+        jPanel9.add(LabelPoli, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, -1, -1));
+
+        Refresh.setText("Refresh");
+        Refresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RefreshActionPerformed(evt);
+            }
+        });
+        jPanel9.add(Refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 14, -1, -1));
+
+        Reset.setText("Reset");
+        Reset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResetActionPerformed(evt);
+            }
+        });
+        jPanel9.add(Reset, new org.netbeans.lib.awtextra.AbsoluteConstraints(102, 14, 71, -1));
+        jPanel9.add(DataPPoli, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 130, -1));
+        jPanel9.add(DataPNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 40, 130, -1));
+
+        Home.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 820, 260));
+
+        label.setBackground(new java.awt.Color(0, 0, 0));
+        label.setFont(new java.awt.Font("David", 0, 36)); // NOI18N
+        label.setForeground(new java.awt.Color(255, 255, 255));
+        label.setText("Petugas : ");
+        Home.add(label, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
 
         jLabel35.setText("Poli");
 
@@ -697,23 +800,36 @@ public class WaitingDisplay extends javax.swing.JFrame {
         Alamat.setRows(5);
         jScrollPane4.setViewportView(Alamat);
 
+        Grup.add(Laki);
         Laki.setText("L");
 
+        Grup.add(Perempuan);
         Perempuan.setText("P");
 
         jLabel4.setText("Umur");
 
-        jButton4.setText("Input");
+        jButton4.setBackground(new java.awt.Color(0, 224, 221));
+        jButton4.setText("INPUT");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
 
-        Poli.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Umum", "Gigi", "Kandungan", "Anak" }));
+        Poli.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Umum", "Gigi", "Anak" }));
         Poli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PoliActionPerformed(evt);
+            }
+        });
+
+        jButton1.setBackground(new java.awt.Color(255, 51, 51));
+        jButton1.setFont(new java.awt.Font("Trajan Pro", 0, 11)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("LogOut");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -721,98 +837,95 @@ public class WaitingDisplay extends javax.swing.JFrame {
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Nama, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addComponent(Laki)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Perempuan))
-                    .addComponent(Poli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(51, 51, 51)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Umur))
-                    .addComponent(jLabel14)
-                    .addComponent(jLabel11)
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addComponent(jLabel13)
-                        .addGap(18, 18, 18)
-                        .addComponent(NIK, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane2))
-                .addContainerGap(17, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                        .addComponent(jLabel34)
-                        .addGap(234, 234, 234))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                        .addComponent(jButton4)
-                        .addGap(27, 27, 27))))
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel13Layout.createSequentialGroup()
+                                .addComponent(Perempuan)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Laki))
+                            .addComponent(Poli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                            .addComponent(Nama))
+                        .addGap(30, 30, 30)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel13Layout.createSequentialGroup()
+                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel11)
+                                    .addGroup(jPanel13Layout.createSequentialGroup()
+                                        .addComponent(jLabel13)
+                                        .addGap(44, 44, 44)
+                                        .addComponent(NIK, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel13Layout.createSequentialGroup()
+                                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel14)
+                                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING))
+                                        .addGap(36, 36, 36)
+                                        .addComponent(Umur, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel13Layout.createSequentialGroup()
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE)
+                                .addGap(33, 33, 33)
+                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(28, 28, 28))
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel13Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel34)
-                .addGap(18, 18, 18)
+                .addGap(16, 16, 16)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel35)
                     .addComponent(jLabel13)
                     .addComponent(NIK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Poli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Laki)
-                        .addComponent(Perempuan)
-                        .addComponent(jLabel4)
-                        .addComponent(Umur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(Perempuan)
+                    .addComponent(Laki)
+                    .addComponent(jLabel4)
+                    .addComponent(Umur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(Nama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
                     .addComponent(jLabel10)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
-                .addComponent(jButton4)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
-        Home.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 570, 240));
+        Home.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 820, 270));
 
-        jButton5.setText("jButton5");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-        Home.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 300, -1, -1));
+        lbNama.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lbNama.setForeground(new java.awt.Color(255, 255, 255));
+        lbNama.setText("jLabel15");
+        Home.add(lbNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 90, 30));
 
-        jButton6.setText("jButton6");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-        Home.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, -1, -1));
+        jLabel34.setFont(new java.awt.Font("Vani", 1, 14)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel34.setText("REGISTRASI PASIEN");
+        Home.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, -1, -1));
+
+        jPanel4.add(Home, "card3");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -825,25 +938,19 @@ public class WaitingDisplay extends javax.swing.JFrame {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        jLabel3.setText("Informasi Petugas");
-
         javax.swing.GroupLayout AntrianLayout = new javax.swing.GroupLayout(Antrian);
         Antrian.setLayout(AntrianLayout);
         AntrianLayout.setHorizontalGroup(
             AntrianLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AntrianLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(AntrianLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(657, Short.MAX_VALUE))
         );
         AntrianLayout.setVerticalGroup(
             AntrianLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AntrianLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(36, 36, 36)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(299, Short.MAX_VALUE))
         );
@@ -867,43 +974,27 @@ public class WaitingDisplay extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1485, Short.MAX_VALUE))
+            .addGap(0, 978, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addComponent(Registrasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 1485, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(735, Short.MAX_VALUE)
-                    .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, 814, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(606, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 652, Short.MAX_VALUE)
+                    .addGap(0, 64, Short.MAX_VALUE)
                     .addComponent(Antrian, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 652, Short.MAX_VALUE)))
+                    .addGap(0, 63, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 978, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 680, Short.MAX_VALUE))
+            .addGap(0, 763, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addComponent(Registrasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 700, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(309, Short.MAX_VALUE)
-                    .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, 614, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(257, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 372, Short.MAX_VALUE)
+                    .addGap(0, 164, Short.MAX_VALUE)
                     .addComponent(Antrian, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 373, Short.MAX_VALUE)))
+                    .addGap(0, 164, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 758, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 5, Short.MAX_VALUE)))
         );
 
         pack();
@@ -916,7 +1007,25 @@ public class WaitingDisplay extends javax.swing.JFrame {
                 a++;
             }
     }
-    
+   private void setNullOutputGigi(){
+    int a = 0;
+    while( a != 30){
+                outputGigi.setValueAt("",a,0);
+                outputGigi.setValueAt("",a,1);
+                a++;
+            }
+    }
+   private void setNullAnak(){
+    int a = 0;
+    while( a != 30){
+                OutputAnak.setValueAt("",a,0);
+                OutputAnak.setValueAt("",a,1);
+                a++;
+            }
+    }
+   int UrutAngka = 0 ;
+   int Urut = 0;
+   
     private void MendaftarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MendaftarActionPerformed
         // TODO add your handling code here:
          Petugas A = new Petugas();
@@ -951,38 +1060,6 @@ public class WaitingDisplay extends javax.swing.JFrame {
         Login.setVisible(false);
         // TODO add your handling code here:
     }//GEN-LAST:event_DaftarActionPerformed
-
-    private void MasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasukActionPerformed
-        Petugas A = new Petugas();
-        String Nama=Username.getText();
-        String pass=Password.getText();
-        
-        String query="select * from petugas where Username='"+Nama+"' and Password='"+pass+"'";
-       
-        ResultSet rs=new Database().getData(query);
-        
-        System.out.print(rs);
-        int i=0;
-        try {
-            while(rs.next()){     
-                lbNama.setText("");
-                //lbNama.setText(rs.getString("Nama"));
-                //InfoNama.setText(rs.getString("Nama"));
-                
-                i++;           
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(WaitingDisplay.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        if(i==0){
-            JOptionPane.showMessageDialog(null,"Maaf, User Belum terdaftar","Login",JOptionPane.INFORMATION_MESSAGE);
-        }else{
-        Home.setVisible(true); 
-        Registrasi.setVisible(false);
-        Login.setVisible(false);
-        }
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MasukActionPerformed
 
     private void UsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameActionPerformed
         // TODO add your handling code here:
@@ -1041,32 +1118,6 @@ public class WaitingDisplay extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void outputUmumMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_outputUmumMouseClicked
-        // TODO add your handling code here:
-        try{
-            int a = outputUmum.getSelectedRow();
-
-            if(a == -1)
-            {
-                return;
-            }
-            String Akun = (String) outputUmum.getValueAt(a, 0);
-            String isi = (String) outputUmum.getValueAt(a, 1);
-
-            
-        }catch(NullPointerException npe){
-            JOptionPane.showMessageDialog(null, "Maaf, Baris yang anda klik tidak memiliki data");
-        }catch(Throwable t){
-            JOptionPane.showMessageDialog(null, t.getMessage());
-        }
-        Home.setVisible(false);
-    }//GEN-LAST:event_outputUmumMouseClicked
-
-    private void outputUmumMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_outputUmumMousePressed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_outputUmumMousePressed
-
     private void PasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PasswordMouseClicked
         if(evt.getSource()==Password){
             Password.setText("");
@@ -1088,33 +1139,108 @@ public class WaitingDisplay extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_FirstNameActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void RefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshActionPerformed
     Database db = new Database();
-        
+
         int a = 0;
-        ResultSet rsq = null;
+
+        ResultSet rsT = null;
         String b = "Umum";
+        String c = "Gigi";
+        String d = "Anak";
+        setNullOutput();
+        setNullAnak();
+        setNullOutputGigi();
         try{
-            rsq=db.getData("select Nama,Alamat from pasien where Pasien.Poli ='"+b+"'");
-            while(rsq.next()){
-                outputUmum.setValueAt(rsq.getString("Nama"),a,0);
-                outputUmum.setValueAt(rsq.getString("Alamat"),a,1);
-                a++;
+                rsT=db.getData("select NoUrut,Nama,jk from pasien where Pasien.Poli ='"+b+"'");
+                while(rsT.next()){
+                    outputUmum.setValueAt(rsT.getString("NoUrut"),a,0);
+                    outputUmum.setValueAt(rsT.getString("Nama"),a,1);
+                    outputUmum.setValueAt(rsT.getString("jk"),a,2);
+                    a++;
+                }
+                a =0;
+                rsT=db.getData("select NoUrut,Nama,jk from pasien where Pasien.Poli ='"+c+"'");
+                while(rsT.next()){
+                    outputGigi.setValueAt(rsT.getString("NoUrut"),a,0);
+                    outputGigi.setValueAt(rsT.getString("Nama"),a,1);
+                    outputGigi.setValueAt(rsT.getString("jk"),a,2);
+                    a++;
+                }
+                a =0;
+                 rsT=db.getData("select NoUrut,Nama,jk from pasien where Pasien.Poli ='"+d+"'");
+                while(rsT.next()){
+                    OutputAnak.setValueAt(rsT.getString("NoUrut"),a,0);
+                    OutputAnak.setValueAt(rsT.getString("Nama"),a,1);
+                    OutputAnak.setValueAt(rsT.getString("jk"),a,2);
+                    a++;
+                }
+                rsT.close();
+            }catch(Exception e){
+                javax.swing.JOptionPane.showMessageDialog(null, "ERROR:"+e.getMessage());
             }
-            rsq.close();
+            
+        
+    }//GEN-LAST:event_RefreshActionPerformed
+
+    private void outputUmumMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_outputUmumMouseClicked
+          
+        try{
+            int a = outputUmum.getSelectedRow();
+
+            if(a == -1)
+            {
+                return;
+            }
+            String HNama = (String) outputUmum.getValueAt(a, 1);
+            //String isi = (String) OutputAnak.getValueAt(a, 1);
+            Database db = new Database();
+        ResultSet rs;   
+        int k = 0;
+        rs = null; 
+        try{
+            
+            rs=db.getData("select * from pasien where Pasien.nama='"+HNama+"'");
+            while(rs.next()){
+                DPoli.setText(rs.getString("Poli"));
+                DNama.setText(rs.getString("Nama"));
+                DJK.setText(rs.getString("JK"));
+                DNIK.setText(rs.getString("NIK"));
+                DAlamat.setText(rs.getString("Alamat"));
+                DUmur.setText(rs.getString("Umur"));
+                DKeluhan.setText(rs.getString("Keluhan"));
+                
+                DPoli.setEditable(false);
+                DNama.setEditable(false);
+                DJK.setEditable(false);
+                DNIK.setEditable(false);
+                DAlamat.setEditable(false);
+                DUmur.setEditable(false);
+                DKeluhan.setEditable(false);
+                
+                k++;
+            }
+            rs.close();
         }catch(Exception e){
             javax.swing.JOptionPane.showMessageDialog(null, "ERROR:"+e.getMessage());
-        }        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+        }
+           
+            
+        }catch(NullPointerException npe){
+            JOptionPane.showMessageDialog(null, "Maaf, Baris yang anda klik tidak memiliki data");
+        }catch(Throwable t){
+            JOptionPane.showMessageDialog(null, t.getMessage());
+        }
+        Home.setVisible(false);
+        View.setVisible(true);
+        
+        
+      
+    }//GEN-LAST:event_outputUmumMouseClicked
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void PoliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PoliActionPerformed
         // TODO add your handling code here:
-        Pasien P = new Pasien();
-        String getPoli;
-        getPoli = (String) Poli.getSelectedItem();
-        //System.out.print(getPoli);
-        Nama.setText(getPoli);
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_PoliActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
@@ -1134,7 +1260,7 @@ public class WaitingDisplay extends javax.swing.JFrame {
         P.setKeluhan(Keluhan.getText());
         P.saveData();
 
-        javax.swing.JOptionPane.showMessageDialog(null,"Pendaftaran Pasien berhasil, Mulai cari teman di Aplikasi");
+        javax.swing.JOptionPane.showMessageDialog(null,"Pendaftaran Pasien berhasil");
 
         Nama.setText("");
         Alamat.setText("");
@@ -1145,29 +1271,289 @@ public class WaitingDisplay extends javax.swing.JFrame {
         Database db = new Database();
 
         int a = 0;
-        ResultSet rsT = null;
-        String b = "Umum";
-        try{
-            rsT=db.getData("select Nama,Alamat from pasien where Pasien.Poli ='"+getPoli+"'");
-            while(rsT.next()){
-                outputUmum.setValueAt(rsT.getString("Nama"),a,0);
-                outputUmum.setValueAt(rsT.getString("Alamat"),a,1);
-                a++;
-            }
-            rsT.close();
-        }catch(Exception e){
-            javax.swing.JOptionPane.showMessageDialog(null, "ERROR:"+e.getMessage());
-        }
 
+        ResultSet rsT = null;
+        if("Umum".equals(getPoli)){
+            try{
+                rsT=db.getData("select NoUrut,Nama,jk from pasien where Pasien.Poli ='"+getPoli+"'");
+                while(rsT.next()){
+                    outputUmum.setValueAt(rsT.getString("NoUrut"),a,0);
+                    outputUmum.setValueAt(rsT.getString("Nama"),a,1);
+                    outputUmum.setValueAt(rsT.getString("jk"),a,2);
+                    a++;
+                }
+                rsT.close();
+            }catch(Exception e){
+                javax.swing.JOptionPane.showMessageDialog(null, "ERROR:"+e.getMessage());
+            }
+        }if("Gigi".equals(getPoli)){
+            try{
+                rsT=db.getData("select NoUrut,Nama,jk from pasien where Pasien.Poli ='"+getPoli+"'");
+                while(rsT.next()){
+                    outputGigi.setValueAt(rsT.getString("NoUrut"),a,0);
+                    outputGigi.setValueAt(rsT.getString("Nama"),a,1);
+                    outputGigi.setValueAt(rsT.getString("jk"),a,2);
+                    a++;
+                }
+                rsT.close();
+            }catch(Exception e){
+                javax.swing.JOptionPane.showMessageDialog(null, "ERROR:"+e.getMessage());
+            }
+        }
+        if("Anak".equals(getPoli)){
+            try{
+                rsT=db.getData("select NoUrut,Nama,jk from pasien where Pasien.Poli ='"+getPoli+"'");
+                while(rsT.next()){
+                    OutputAnak.setValueAt(rsT.getString("NoUrut"),a,0);
+                    OutputAnak.setValueAt(rsT.getString("Nama"),a,1);
+                    OutputAnak.setValueAt(rsT.getString("jk"),a,2);
+                    a++;
+                }
+                rsT.close();
+            }catch(Exception e){
+                javax.swing.JOptionPane.showMessageDialog(null, "ERROR:"+e.getMessage());
+            }
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void NamaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NamaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NamaActionPerformed
 
-    private void PoliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PoliActionPerformed
+    int row = 0;
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_PoliActionPerformed
+                    Object p = outputUmum.getValueAt(row, 0);
+                    String q = (String) outputUmum.getValueAt(row, 1);
+                    
+                    String r = (String) outputUmum.getValueAt(row, 2); 
+                  
+                Nama.setText((String) p);
+                obj2.getUmumAngka().setText((String) p);
+                obj2.getAnAngka().setText((String) p);
+                obj2.getAnNama().setText(q);
+                obj2.getAnPoli().setText("Umum");
+                
+                
+                LabelUrutan.setText((String) p);
+                DataPNama.setText(q);
+                DataPPoli.setText("Umum");
+                
+        row++;
+        obj2.setVisible(true);
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetActionPerformed
+        // TODO add your handling code here:
+        Database db = new Database();
+        String s;
+        s = "delete from pasien";
+        db.query(s);
+        setNullOutput();
+        setNullOutputGigi();
+        setNullAnak();
+    }//GEN-LAST:event_ResetActionPerformed
+    int rowGigi = 0;
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+        Object p = outputGigi.getValueAt(rowGigi, 0);
+                    String q = (String) outputGigi.getValueAt(rowGigi, 1);
+                    
+                    String r = (String) outputGigi.getValueAt(rowGigi, 2); 
+                  
+                //Nama.setText((String) p);
+                obj2.getGigiAngka().setText((String) p);
+                obj2.getAnAngka().setText((String) p);
+                obj2.getAnNama().setText(q);
+                obj2.getAnPoli().setText("Gigi");
+                
+                LabelUrutan.setText((String) p);
+                DataPNama.setText(q);
+                DataPPoli.setText("Gigi");
+                
+        rowGigi++;
+        obj2.setVisible(true);
+    }//GEN-LAST:event_jButton8ActionPerformed
+    int rowAnak = 0;
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+        Object p = OutputAnak.getValueAt(rowAnak, 0);
+                    String q = (String) OutputAnak.getValueAt(rowAnak, 1);
+                    
+                    String r = (String) OutputAnak.getValueAt(rowAnak, 2); 
+                
+                Nama.setText((String) p);
+                obj2.getAnakAngka().setText((String) p);
+                obj2.getAnAngka().setText((String) p);
+                obj2.getAnNama().setText(q);
+                obj2.getAnPoli().setText("Anak");
+                
+                LabelUrutan.setText((String) p);
+                DataPNama.setText(q);
+                DataPPoli.setText("Anak");
+                
+        rowAnak++;
+        obj2.setVisible(true);
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void DJKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DJKActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DJKActionPerformed
+
+    private void outputGigiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_outputGigiMouseClicked
+        // TODO add your handling code here:
+        try{
+            int a = outputGigi.getSelectedRow();
+
+            if(a == -1)
+            {
+                return;
+            }
+            String HNama = (String) outputGigi.getValueAt(a, 1);
+            //String isi = (String) OutputAnak.getValueAt(a, 1);
+            Database db = new Database();
+        ResultSet rs;   
+        int k = 0;
+        rs = null; 
+        try{
+            
+            rs=db.getData("select * from pasien where Pasien.nama='"+HNama+"'");
+            while(rs.next()){
+                DPoli.setText(rs.getString("Poli"));
+                DNama.setText(rs.getString("Nama"));
+                DJK.setText(rs.getString("JK"));
+                DNIK.setText(rs.getString("NIK"));
+                DAlamat.setText(rs.getString("Alamat"));
+                DUmur.setText(rs.getString("Umur"));
+                DKeluhan.setText(rs.getString("Keluhan"));
+                
+                DPoli.setEditable(false);
+                DNama.setEditable(false);
+                DJK.setEditable(false);
+                DNIK.setEditable(false);
+                DAlamat.setEditable(false);
+                DUmur.setEditable(false);
+                DKeluhan.setEditable(false);
+                
+         
+                
+                k++;
+            }
+            rs.close();
+        }catch(Exception e){
+            javax.swing.JOptionPane.showMessageDialog(null, "ERROR:"+e.getMessage());
+        }
+           
+            
+        }catch(NullPointerException npe){
+            JOptionPane.showMessageDialog(null, "Maaf, Baris yang anda klik tidak memiliki data");
+        }catch(Throwable t){
+            JOptionPane.showMessageDialog(null, t.getMessage());
+        }
+        Home.setVisible(false);
+        View.setVisible(true);
+        
+        
+    }//GEN-LAST:event_outputGigiMouseClicked
+
+    private void OutputAnakMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutputAnakMouseClicked
+        // TODO add your handling code here:
+        try{
+            int a = OutputAnak.getSelectedRow();
+
+            if(a == -1)
+            {
+                return;
+            }
+            String HNama = (String) OutputAnak.getValueAt(a, 1);
+            //String isi = (String) OutputAnak.getValueAt(a, 1);
+            Database db = new Database();
+        ResultSet rs;   
+        int k = 0;
+        rs = null; 
+        try{
+            
+            rs=db.getData("select * from pasien where Pasien.nama='"+HNama+"'");
+            while(rs.next()){
+                DPoli.setText(rs.getString("Poli"));
+                DNama.setText(rs.getString("Nama"));
+                DJK.setText(rs.getString("JK"));
+                DNIK.setText(rs.getString("NIK"));
+                DAlamat.setText(rs.getString("Alamat"));
+                DUmur.setText(rs.getString("Umur"));
+                DKeluhan.setText(rs.getString("Keluhan"));
+                
+                DPoli.setEditable(false);
+                DNama.setEditable(false);
+                DJK.setEditable(false);
+                DNIK.setEditable(false);
+                DAlamat.setEditable(false);
+                DUmur.setEditable(false);
+                DKeluhan.setEditable(false);
+                
+              
+                
+                k++;
+            }
+            rs.close();
+        }catch(Exception e){
+            javax.swing.JOptionPane.showMessageDialog(null, "ERROR:"+e.getMessage());
+        }
+           
+            
+        }catch(NullPointerException npe){
+            JOptionPane.showMessageDialog(null, "Maaf, Baris yang anda klik tidak memiliki data");
+        }catch(Throwable t){
+            JOptionPane.showMessageDialog(null, t.getMessage());
+        }
+        Home.setVisible(false);
+        View.setVisible(true);
+        
+        
+
+    }//GEN-LAST:event_OutputAnakMouseClicked
+
+    private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
+        // TODO add your handling code here:
+        View.setVisible(false);
+        Home.setVisible(true);
+    }//GEN-LAST:event_BackActionPerformed
+
+    private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jTabbedPane1MouseClicked
+
+    private void jLabel30MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel30MouseClicked
+        // TODO add your handling code here:
+        Petugas A = new Petugas();
+        String Nama=Username.getText();
+        String pass=Password.getText();
+        
+        String query="select * from petugas where Username='"+Nama+"' and Password='"+pass+"'";
+       
+        ResultSet rs=new Database().getData(query);
+        
+        int i=0;
+        try {
+            while(rs.next()){    
+                lbNama.setText(Username.getText());
+                i++;           
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(WaitingDisplay.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if(i==0){
+            JOptionPane.showMessageDialog(null,"Maaf, User Belum terdaftar","Login",JOptionPane.INFORMATION_MESSAGE);
+        }else{
+        Home.setVisible(true); 
+        //Layout.setVisible(true);
+        Registrasi.setVisible(false);
+        Login.setVisible(false);
+        
+        }
+    }//GEN-LAST:event_jLabel30MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1209,35 +1595,55 @@ public class WaitingDisplay extends javax.swing.JFrame {
     private javax.swing.JTextArea Address;
     private javax.swing.JTextArea Alamat;
     private javax.swing.JPanel Antrian;
-    private javax.swing.JTextField Birth;
+    private javax.swing.JButton Back;
+    private javax.swing.JTextArea DAlamat;
+    private javax.swing.JTextField DJK;
+    private javax.swing.JTextArea DKeluhan;
+    private javax.swing.JTextField DNIK;
+    private javax.swing.JTextField DNama;
+    private javax.swing.JTextField DPoli;
+    private javax.swing.JTextField DUmur;
     private javax.swing.JButton Daftar;
+    private javax.swing.JTextField DataPNama;
+    private javax.swing.JTextField DataPPoli;
     private javax.swing.JRadioButton Female;
     private javax.swing.JTextField FirstName;
+    private javax.swing.ButtonGroup Grup;
+    private javax.swing.ButtonGroup Grup2;
     private javax.swing.JPanel Home;
     private javax.swing.JTextArea Keluhan;
+    private javax.swing.JLabel LabelNama;
+    private javax.swing.JLabel LabelPoli;
+    private javax.swing.JLabel LabelUrutan;
     private javax.swing.JRadioButton Laki;
     private javax.swing.JTextField LastName;
+    private javax.swing.JPanel Layout;
     private javax.swing.JPanel Login;
     private javax.swing.JRadioButton Male;
-    private javax.swing.JButton Masuk;
     private javax.swing.JButton Mendaftar;
     private javax.swing.JTextField NIK;
     private javax.swing.JTextField Nama;
+    private javax.swing.JTable OutputAnak;
     private javax.swing.JPasswordField Password;
     private javax.swing.JPasswordField PasswordF;
     private javax.swing.JRadioButton Perempuan;
     private javax.swing.JComboBox Poli;
+    private javax.swing.JButton Refresh;
     private javax.swing.JPanel Registrasi;
+    private javax.swing.JButton Reset;
     private javax.swing.JTextField Umur;
     private javax.swing.JTextField Username;
+    private javax.swing.JPanel View;
     private javax.swing.JLabel hard;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
+    private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -1245,10 +1651,22 @@ public class WaitingDisplay extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel4;
@@ -1262,28 +1680,30 @@ public class WaitingDisplay extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel label;
     private javax.swing.JLabel lbNama;
     private javax.swing.JLabel low;
     private javax.swing.JLabel normal;
     private javax.swing.JTable outputGigi;
-    private javax.swing.JTable outputKandungan;
     private javax.swing.JTable outputUmum;
     private javax.swing.JTextField userName;
     // End of variables declaration//GEN-END:variables
