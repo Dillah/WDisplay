@@ -33,13 +33,9 @@ public class WaitingDisplay extends javax.swing.JFrame {
     public WaitingDisplay() {
         initComponents();
         this.UrutAngka = 0;
-        Home.setVisible(false);
-        Registrasi.setVisible(false);
-        Login.setVisible(true);
-        //Layout.setVisible(false);
-        this.setSize(900,700);
+        this.setSize(850,700);
         this.setLocationRelativeTo(null);
-            
+        Antrian.setVisible(false);
     }
    
     
@@ -64,12 +60,34 @@ public class WaitingDisplay extends javax.swing.JFrame {
         jLabel24 = new javax.swing.JLabel();
         Grup = new javax.swing.ButtonGroup();
         Grup2 = new javax.swing.ButtonGroup();
+        jLabel28 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
         Login = new javax.swing.JPanel();
+        Daftar = new javax.swing.JButton();
+        jLabel30 = new javax.swing.JLabel();
         Username = new javax.swing.JTextField();
         Password = new javax.swing.JPasswordField();
-        Daftar = new javax.swing.JButton();
-        Masuk = new javax.swing.JButton();
+        jLabel29 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
+        View = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        DPoli = new javax.swing.JTextField();
+        DNama = new javax.swing.JTextField();
+        DNIK = new javax.swing.JTextField();
+        DJK = new javax.swing.JTextField();
+        DUmur = new javax.swing.JTextField();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        DAlamat = new javax.swing.JTextArea();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        DKeluhan = new javax.swing.JTextArea();
+        Back = new javax.swing.JButton();
+        jLabel26 = new javax.swing.JLabel();
         Registrasi = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         FirstName = new javax.swing.JTextField();
@@ -85,8 +103,6 @@ public class WaitingDisplay extends javax.swing.JFrame {
         low = new javax.swing.JLabel();
         normal = new javax.swing.JLabel();
         hard = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        Birth = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         userName = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
@@ -114,11 +130,10 @@ public class WaitingDisplay extends javax.swing.JFrame {
         LabelPoli = new javax.swing.JLabel();
         Refresh = new javax.swing.JButton();
         Reset = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        DataPPoli = new javax.swing.JTextField();
+        DataPNama = new javax.swing.JTextField();
         label = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jPanel13 = new javax.swing.JPanel();
-        jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         Nama = new javax.swing.JTextField();
@@ -138,7 +153,9 @@ public class WaitingDisplay extends javax.swing.JFrame {
         Umur = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
         Poli = new javax.swing.JComboBox();
+        jButton1 = new javax.swing.JButton();
         lbNama = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
         Antrian = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -196,14 +213,42 @@ public class WaitingDisplay extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
+        jLabel28.setText("jLabel28");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Book Ch@ D3 If 36 01");
+
+        jPanel4.setLayout(new java.awt.CardLayout());
 
         Login.setPreferredSize(new java.awt.Dimension(670, 500));
         Login.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        Daftar.setBackground(new java.awt.Color(255, 255, 255));
+        Daftar.setFont(new java.awt.Font("SansSerif", 0, 11)); // NOI18N
+        Daftar.setForeground(new java.awt.Color(0, 0, 255));
+        Daftar.setText("Sign Up");
+        Daftar.setPreferredSize(new java.awt.Dimension(71, 23));
+        Daftar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DaftarActionPerformed(evt);
+            }
+        });
+        Login.add(Daftar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 80, 25));
+
+        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/UI_login_btn.png"))); // NOI18N
+        jLabel30.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel30.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel30MouseClicked(evt);
+            }
+        });
+        Login.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 400, -1, -1));
+
+        Username.setBackground(new java.awt.Color(225, 225, 225));
+        Username.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         Username.setForeground(new java.awt.Color(204, 204, 204));
         Username.setText("U s e r n a m e");
+        Username.setBorder(null);
         Username.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 UsernameMouseClicked(evt);
@@ -214,10 +259,13 @@ public class WaitingDisplay extends javax.swing.JFrame {
                 UsernameActionPerformed(evt);
             }
         });
-        Login.add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, 170, -1));
+        Login.add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 350, 50));
 
+        Password.setBackground(new java.awt.Color(225, 225, 225));
+        Password.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         Password.setForeground(new java.awt.Color(204, 204, 204));
         Password.setText("paswordcvn");
+        Password.setBorder(null);
         Password.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 PasswordMouseClicked(evt);
@@ -228,35 +276,77 @@ public class WaitingDisplay extends javax.swing.JFrame {
                 PasswordActionPerformed(evt);
             }
         });
-        Login.add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 280, 170, -1));
+        Login.add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, 350, 50));
 
-        Daftar.setBackground(new java.awt.Color(144, 151, 210));
-        Daftar.setFont(new java.awt.Font("Trajan Pro", 0, 11)); // NOI18N
-        Daftar.setForeground(new java.awt.Color(255, 255, 255));
-        Daftar.setText("Sign Up");
-        Daftar.setPreferredSize(new java.awt.Dimension(71, 23));
-        Daftar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DaftarActionPerformed(evt);
-            }
-        });
-        Login.add(Daftar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 390, 80, 25));
-
-        Masuk.setBackground(new java.awt.Color(51, 153, 0));
-        Masuk.setFont(new java.awt.Font("Trajan Pro", 0, 11)); // NOI18N
-        Masuk.setForeground(new java.awt.Color(255, 255, 255));
-        Masuk.setText("Log In");
-        Masuk.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MasukActionPerformed(evt);
-            }
-        });
-        Login.add(Masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 350, 80, -1));
+        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/UI_login.png"))); // NOI18N
+        Login.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 0, 830, 590));
 
         jLabel20.setMaximumSize(new java.awt.Dimension(700, 550));
         jLabel20.setMinimumSize(new java.awt.Dimension(700, 550));
         jLabel20.setPreferredSize(new java.awt.Dimension(700, 550));
         Login.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, 720, 560));
+
+        jPanel4.add(Login, "card5");
+
+        View.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setText("Nama");
+        View.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
+
+        jLabel15.setText("NIK");
+        View.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
+
+        jLabel17.setText("Alamat");
+        View.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, -1, -1));
+
+        jLabel18.setText("Jenis Kelamin");
+        View.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
+
+        jLabel19.setText("Umur");
+        View.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
+
+        jLabel25.setText("Keluhan");
+        View.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, -1, -1));
+
+        jLabel27.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel27.setText("Data Pasien");
+        View.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(255, 11, -1, -1));
+        View.add(DPoli, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 181, -1));
+        View.add(DNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 181, -1));
+        View.add(DNIK, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 181, -1));
+
+        DJK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DJKActionPerformed(evt);
+            }
+        });
+        View.add(DJK, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 181, -1));
+        View.add(DUmur, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 180, -1));
+
+        DAlamat.setColumns(20);
+        DAlamat.setRows(5);
+        jScrollPane6.setViewportView(DAlamat);
+
+        View.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 260, 100));
+
+        DKeluhan.setColumns(20);
+        DKeluhan.setRows(5);
+        jScrollPane7.setViewportView(DKeluhan);
+
+        View.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 170, 260, 100));
+
+        Back.setText("Back");
+        Back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackActionPerformed(evt);
+            }
+        });
+        View.add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, 80, 50));
+
+        jLabel26.setText("Poli");
+        View.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
+
+        jPanel4.add(View, "card2");
 
         Registrasi.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -276,13 +366,13 @@ public class WaitingDisplay extends javax.swing.JFrame {
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
 
         jLabel6.setText("Address");
-        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
 
         jLabel7.setText("Gender");
-        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
 
         jLabel8.setText("Password");
-        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
+        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
 
         Mendaftar.setBackground(new java.awt.Color(255, 255, 255));
         Mendaftar.setFont(new java.awt.Font("Trajan Pro", 0, 11)); // NOI18N
@@ -292,7 +382,7 @@ public class WaitingDisplay extends javax.swing.JFrame {
                 MendaftarActionPerformed(evt);
             }
         });
-        jPanel3.add(Mendaftar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, -1, -1));
+        jPanel3.add(Mendaftar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, -1, -1));
 
         Grup2.add(Male);
         Male.setText("Male");
@@ -301,18 +391,18 @@ public class WaitingDisplay extends javax.swing.JFrame {
                 MaleActionPerformed(evt);
             }
         });
-        jPanel3.add(Male, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, -1, -1));
+        jPanel3.add(Male, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, -1, -1));
 
         Grup2.add(Female);
         Female.setText("Female");
-        jPanel3.add(Female, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, -1, -1));
+        jPanel3.add(Female, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, -1, -1));
 
         PasswordF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 PasswordFKeyReleased(evt);
             }
         });
-        jPanel3.add(PasswordF, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 160, -1));
+        jPanel3.add(PasswordF, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 160, -1));
 
         jButton3.setFont(new java.awt.Font("Trajan Pro", 0, 11)); // NOI18N
         jButton3.setText("LogIn");
@@ -326,35 +416,40 @@ public class WaitingDisplay extends javax.swing.JFrame {
         jPanel3.add(normal, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, 60, 20));
         jPanel3.add(hard, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, 40, 20));
 
-        jLabel1.setText("Date of Birth");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, -1));
-        jPanel3.add(Birth, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 160, -1));
-
         jLabel16.setText("Username");
-        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
-        jPanel3.add(userName, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 160, -1));
+        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));
+        jPanel3.add(userName, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 160, -1));
 
         jLabel21.setText("Last Name");
-        jPanel3.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, -1, -1));
+        jPanel3.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, -1));
         jPanel3.add(LastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 160, -1));
 
         Address.setColumns(20);
         Address.setRows(5);
         jScrollPane10.setViewportView(Address);
 
-        jPanel3.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 230, 40));
+        jPanel3.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 230, 70));
 
         Registrasi.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 390, 360));
         Registrasi.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, -1));
 
-        Home.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel4.add(Registrasi, "card4");
+
+        Home.setBackground(new java.awt.Color(51, 153, 255));
         Home.setMinimumSize(new java.awt.Dimension(800, 700));
         Home.setPreferredSize(new java.awt.Dimension(683, 560));
         Home.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel9.setBackground(new java.awt.Color(102, 255, 255));
+        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
         jPanel9.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel9.setPreferredSize(new java.awt.Dimension(620, 200));
+        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTabbedPane1MouseClicked(evt);
+            }
+        });
 
         outputUmum.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -422,9 +517,6 @@ public class WaitingDisplay extends javax.swing.JFrame {
             }
         });
         outputUmum.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                outputUmumMousePressed(evt);
-            }
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 outputUmumMouseClicked(evt);
             }
@@ -507,6 +599,11 @@ public class WaitingDisplay extends javax.swing.JFrame {
                 "No Antrian", "Nama", "JK"
             }
         ));
+        outputGigi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                outputGigiMouseClicked(evt);
+            }
+        });
         jScrollPane9.setViewportView(outputGigi);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -516,7 +613,7 @@ public class WaitingDisplay extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 555, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -585,6 +682,11 @@ public class WaitingDisplay extends javax.swing.JFrame {
                 "No Antrian", "Nama", "JK"
             }
         ));
+        OutputAnak.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OutputAnakMouseClicked(evt);
+            }
+        });
         jScrollPane5.setViewportView(OutputAnak);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -593,7 +695,7 @@ public class WaitingDisplay extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 546, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 559, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
@@ -606,33 +708,45 @@ public class WaitingDisplay extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Poli Anak", jPanel6);
 
+        jPanel9.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 55, -1, -1));
+
+        jButton7.setBackground(new java.awt.Color(0, 0, 255));
+        jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setText("NEXT UMUM");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
             }
         });
+        jPanel9.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(608, 81, 140, 33));
 
+        jButton8.setBackground(new java.awt.Color(0, 255, 0));
         jButton8.setText("NEXT GIGI");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8ActionPerformed(evt);
             }
         });
+        jPanel9.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(608, 125, 140, 34));
 
+        jButton11.setBackground(new java.awt.Color(255, 51, 204));
         jButton11.setText("NEXT ANAK");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton11ActionPerformed(evt);
             }
         });
+        jPanel9.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(608, 170, 140, 32));
 
-        LabelNama.setText("Atas nama");
+        LabelNama.setText("Nama");
+        jPanel9.add(LabelNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 40, -1, 20));
 
         LabelUrutan.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         LabelUrutan.setText("0");
+        jPanel9.add(LabelUrutan, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, 55, -1));
 
-        LabelPoli.setText("Poli Mana");
+        LabelPoli.setText("Poli");
+        jPanel9.add(LabelPoli, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, -1, -1));
 
         Refresh.setText("Refresh");
         Refresh.addActionListener(new java.awt.event.ActionListener() {
@@ -640,6 +754,7 @@ public class WaitingDisplay extends javax.swing.JFrame {
                 RefreshActionPerformed(evt);
             }
         });
+        jPanel9.add(Refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 14, -1, -1));
 
         Reset.setText("Reset");
         Reset.addActionListener(new java.awt.event.ActionListener() {
@@ -647,94 +762,17 @@ public class WaitingDisplay extends javax.swing.JFrame {
                 ResetActionPerformed(evt);
             }
         });
+        jPanel9.add(Reset, new org.netbeans.lib.awtextra.AbsoluteConstraints(102, 14, 71, -1));
+        jPanel9.add(DataPPoli, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 130, -1));
+        jPanel9.add(DataPNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 40, 130, -1));
 
-        jButton2.setText("jButton2");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(Refresh)
-                        .addGap(18, 18, 18)
-                        .addComponent(Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2))
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 571, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                        .addComponent(LabelUrutan, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LabelPoli)
-                            .addComponent(LabelNama))
-                        .addGap(33, 33, 33))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Reset)
-                            .addComponent(Refresh)
-                            .addComponent(jButton2))
-                        .addGap(18, 18, 18)
-                        .addComponent(jTabbedPane1))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LabelPoli)
-                            .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(LabelUrutan)
-                                .addComponent(LabelNama, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(37, 37, 37))
-        );
-
-        Home.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 750, 260));
+        Home.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 820, 260));
 
         label.setBackground(new java.awt.Color(0, 0, 0));
         label.setFont(new java.awt.Font("David", 0, 36)); // NOI18N
         label.setForeground(new java.awt.Color(255, 255, 255));
         label.setText("Petugas : ");
         Home.add(label, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
-
-        jButton1.setBackground(new java.awt.Color(0, 255, 153));
-        jButton1.setFont(new java.awt.Font("Trajan Pro", 0, 11)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 0, 0));
-        jButton1.setText("LogOut");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        Home.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 10, -1, -1));
-
-        jLabel34.setFont(new java.awt.Font("Vani", 1, 14)); // NOI18N
-        jLabel34.setText("Registrasi Pasien");
 
         jLabel35.setText("Poli");
 
@@ -770,7 +808,8 @@ public class WaitingDisplay extends javax.swing.JFrame {
 
         jLabel4.setText("Umur");
 
-        jButton4.setText("Input");
+        jButton4.setBackground(new java.awt.Color(0, 224, 221));
+        jButton4.setText("INPUT");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -784,39 +823,43 @@ public class WaitingDisplay extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setBackground(new java.awt.Color(255, 51, 51));
+        jButton1.setFont(new java.awt.Font("Trajan Pro", 0, 11)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("LogOut");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addComponent(Perempuan)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Laki))
-                    .addComponent(Poli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                    .addComponent(Nama))
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
-                        .addComponent(jLabel34)
-                        .addGap(111, 111, 111)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10))
-                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel13Layout.createSequentialGroup()
+                                .addComponent(Perempuan)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Laki))
+                            .addComponent(Poli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                            .addComponent(Nama))
                         .addGap(30, 30, 30)
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel13Layout.createSequentialGroup()
-                                .addComponent(jScrollPane2)
-                                .addGap(129, 129, 129))
                             .addGroup(jPanel13Layout.createSequentialGroup()
                                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel11)
@@ -827,58 +870,62 @@ public class WaitingDisplay extends javax.swing.JFrame {
                                     .addGroup(jPanel13Layout.createSequentialGroup()
                                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel14)
-                                            .addComponent(jLabel4))
+                                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING))
                                         .addGap(36, 36, 36)
                                         .addComponent(Umur, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
-                .addGap(32, 32, 32))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel13Layout.createSequentialGroup()
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE)
+                                .addGap(33, 33, 33)
+                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(28, 28, 28))
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel34))
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jButton4)))
-                .addGap(18, 18, 18)
+                .addGap(16, 16, 16)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel35)
                     .addComponent(jLabel13)
                     .addComponent(NIK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Poli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel12)
-                        .addComponent(Perempuan)
-                        .addComponent(Laki))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel4)
-                        .addComponent(Umur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(Perempuan)
+                    .addComponent(Laki)
+                    .addComponent(jLabel4)
+                    .addComponent(Umur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(Nama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
                     .addComponent(jLabel10)
-                    .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
-                .addGap(27, 27, 27))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
-        Home.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 750, 260));
+        Home.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 820, 270));
 
         lbNama.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lbNama.setForeground(new java.awt.Color(255, 255, 255));
         lbNama.setText("jLabel15");
         Home.add(lbNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 90, 30));
+
+        jLabel34.setFont(new java.awt.Font("Vani", 1, 14)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel34.setText("REGISTRASI PASIEN");
+        Home.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, -1, -1));
+
+        jPanel4.add(Home, "card3");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -927,43 +974,27 @@ public class WaitingDisplay extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(830, Short.MAX_VALUE))
+            .addGap(0, 978, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addComponent(Registrasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 830, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(407, Short.MAX_VALUE)
-                    .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, 814, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(279, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 325, Short.MAX_VALUE)
+                    .addGap(0, 64, Short.MAX_VALUE)
                     .addComponent(Antrian, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 324, Short.MAX_VALUE)))
+                    .addGap(0, 63, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 978, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 542, Short.MAX_VALUE))
+            .addGap(0, 763, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addComponent(Registrasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 562, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(240, Short.MAX_VALUE)
-                    .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, 614, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(188, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 303, Short.MAX_VALUE)
+                    .addGap(0, 164, Short.MAX_VALUE)
                     .addComponent(Antrian, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 304, Short.MAX_VALUE)))
+                    .addGap(0, 164, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 758, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 5, Short.MAX_VALUE)))
         );
 
         pack();
@@ -1029,37 +1060,6 @@ public class WaitingDisplay extends javax.swing.JFrame {
         Login.setVisible(false);
         // TODO add your handling code here:
     }//GEN-LAST:event_DaftarActionPerformed
-
-    private void MasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasukActionPerformed
-        Petugas A = new Petugas();
-        String Nama=Username.getText();
-        String pass=Password.getText();
-        
-        String query="select * from petugas where Username='"+Nama+"' and Password='"+pass+"'";
-       
-        ResultSet rs=new Database().getData(query);
-        
-        int i=0;
-        try {
-            while(rs.next()){    
-                //lbNama.setText(Username.getText());
-                i++;           
-            }
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(WaitingDisplay.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        if(i==0){
-            JOptionPane.showMessageDialog(null,"Maaf, User Belum terdaftar","Login",JOptionPane.INFORMATION_MESSAGE);
-        }else{
-        Home.setVisible(true); 
-        //Layout.setVisible(true);
-        Registrasi.setVisible(false);
-        Login.setVisible(false);
-        
-        }
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MasukActionPerformed
 
     private void UsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameActionPerformed
         // TODO add your handling code here:
@@ -1183,12 +1183,8 @@ public class WaitingDisplay extends javax.swing.JFrame {
         
     }//GEN-LAST:event_RefreshActionPerformed
 
-    private void outputUmumMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_outputUmumMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_outputUmumMousePressed
-
     private void outputUmumMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_outputUmumMouseClicked
-        // TODO add your handling code here:
+          
         try{
             int a = outputUmum.getSelectedRow();
 
@@ -1196,15 +1192,50 @@ public class WaitingDisplay extends javax.swing.JFrame {
             {
                 return;
             }
-            String Akun = (String) outputUmum.getValueAt(a, 0);
-            String isi = (String) outputUmum.getValueAt(a, 1);
-
+            String HNama = (String) outputUmum.getValueAt(a, 1);
+            //String isi = (String) OutputAnak.getValueAt(a, 1);
+            Database db = new Database();
+        ResultSet rs;   
+        int k = 0;
+        rs = null; 
+        try{
+            
+            rs=db.getData("select * from pasien where Pasien.nama='"+HNama+"'");
+            while(rs.next()){
+                DPoli.setText(rs.getString("Poli"));
+                DNama.setText(rs.getString("Nama"));
+                DJK.setText(rs.getString("JK"));
+                DNIK.setText(rs.getString("NIK"));
+                DAlamat.setText(rs.getString("Alamat"));
+                DUmur.setText(rs.getString("Umur"));
+                DKeluhan.setText(rs.getString("Keluhan"));
+                
+                DPoli.setEditable(false);
+                DNama.setEditable(false);
+                DJK.setEditable(false);
+                DNIK.setEditable(false);
+                DAlamat.setEditable(false);
+                DUmur.setEditable(false);
+                DKeluhan.setEditable(false);
+                
+                k++;
+            }
+            rs.close();
+        }catch(Exception e){
+            javax.swing.JOptionPane.showMessageDialog(null, "ERROR:"+e.getMessage());
+        }
+           
+            
         }catch(NullPointerException npe){
             JOptionPane.showMessageDialog(null, "Maaf, Baris yang anda klik tidak memiliki data");
         }catch(Throwable t){
             JOptionPane.showMessageDialog(null, t.getMessage());
         }
         Home.setVisible(false);
+        View.setVisible(true);
+        
+        
+      
     }//GEN-LAST:event_outputUmumMouseClicked
 
     private void PoliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PoliActionPerformed
@@ -1303,6 +1334,11 @@ public class WaitingDisplay extends javax.swing.JFrame {
                 obj2.getAnNama().setText(q);
                 obj2.getAnPoli().setText("Umum");
                 
+                
+                LabelUrutan.setText((String) p);
+                DataPNama.setText(q);
+                DataPPoli.setText("Umum");
+                
         row++;
         obj2.setVisible(true);
     }//GEN-LAST:event_jButton7ActionPerformed
@@ -1317,52 +1353,6 @@ public class WaitingDisplay extends javax.swing.JFrame {
         setNullOutputGigi();
         setNullAnak();
     }//GEN-LAST:event_ResetActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        //obj2.setVisible(true);
-        //new Layout().resize(250, 150);
-        
-        Database db = new Database();
-        
-        Urut = Urut+1;
-        ResultSet rsq = null;
-        String g = null,h = null,l = null;
-        try{
-            rsq=db.getData("select * from pasien where Pasien.NoUrut ='"+Urut+"'");
-            while(rsq.next()){
-               
-                g = rsq.getString("NoUrut");
-                h = rsq.getString("Nama");
-                l = rsq.getString("Poli");
-                /*LabelUrutan.setText(rsq.getString("NoUrut"));
-                LabelNama.setText(rsq.getString("Nama"));
-                LabelPoli.setText(rsq.getString("Poli"));
-                */
-                obj2.getAnAngka().setText(g);
-                obj2.getAnNama().setText(h);
-                obj2.getAnPoli().setText(l);
-                
-                if ("Umum".equals(l)){
-                    obj2.getUmumAngka().setText(g);
-                }else if ("Gigi".equals(l)){
-                    obj2.getGigiAngka().setText(g);
-                }else if ("Anak".equals(l)){
-                    obj2.getAnakAngka().setText(g);
-                }
-            }
-            rsq.close();
-        }catch(Exception e){
-            javax.swing.JOptionPane.showMessageDialog(null, "ERROR:"+e.getMessage());
-        }
-        
-        //Layout lay = new Layout();
-        //lay.setA(g);
-        //lay.setB(h);
-        //lay.setC(l);
-        //Layout obj2 = new Layout(g,h,l);
-        obj2.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
     int rowGigi = 0;
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
@@ -1376,6 +1366,10 @@ public class WaitingDisplay extends javax.swing.JFrame {
                 obj2.getAnAngka().setText((String) p);
                 obj2.getAnNama().setText(q);
                 obj2.getAnPoli().setText("Gigi");
+                
+                LabelUrutan.setText((String) p);
+                DataPNama.setText(q);
+                DataPPoli.setText("Gigi");
                 
         rowGigi++;
         obj2.setVisible(true);
@@ -1394,9 +1388,172 @@ public class WaitingDisplay extends javax.swing.JFrame {
                 obj2.getAnNama().setText(q);
                 obj2.getAnPoli().setText("Anak");
                 
+                LabelUrutan.setText((String) p);
+                DataPNama.setText(q);
+                DataPPoli.setText("Anak");
+                
         rowAnak++;
         obj2.setVisible(true);
     }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void DJKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DJKActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DJKActionPerformed
+
+    private void outputGigiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_outputGigiMouseClicked
+        // TODO add your handling code here:
+        try{
+            int a = outputGigi.getSelectedRow();
+
+            if(a == -1)
+            {
+                return;
+            }
+            String HNama = (String) outputGigi.getValueAt(a, 1);
+            //String isi = (String) OutputAnak.getValueAt(a, 1);
+            Database db = new Database();
+        ResultSet rs;   
+        int k = 0;
+        rs = null; 
+        try{
+            
+            rs=db.getData("select * from pasien where Pasien.nama='"+HNama+"'");
+            while(rs.next()){
+                DPoli.setText(rs.getString("Poli"));
+                DNama.setText(rs.getString("Nama"));
+                DJK.setText(rs.getString("JK"));
+                DNIK.setText(rs.getString("NIK"));
+                DAlamat.setText(rs.getString("Alamat"));
+                DUmur.setText(rs.getString("Umur"));
+                DKeluhan.setText(rs.getString("Keluhan"));
+                
+                DPoli.setEditable(false);
+                DNama.setEditable(false);
+                DJK.setEditable(false);
+                DNIK.setEditable(false);
+                DAlamat.setEditable(false);
+                DUmur.setEditable(false);
+                DKeluhan.setEditable(false);
+                
+         
+                
+                k++;
+            }
+            rs.close();
+        }catch(Exception e){
+            javax.swing.JOptionPane.showMessageDialog(null, "ERROR:"+e.getMessage());
+        }
+           
+            
+        }catch(NullPointerException npe){
+            JOptionPane.showMessageDialog(null, "Maaf, Baris yang anda klik tidak memiliki data");
+        }catch(Throwable t){
+            JOptionPane.showMessageDialog(null, t.getMessage());
+        }
+        Home.setVisible(false);
+        View.setVisible(true);
+        
+        
+    }//GEN-LAST:event_outputGigiMouseClicked
+
+    private void OutputAnakMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OutputAnakMouseClicked
+        // TODO add your handling code here:
+        try{
+            int a = OutputAnak.getSelectedRow();
+
+            if(a == -1)
+            {
+                return;
+            }
+            String HNama = (String) OutputAnak.getValueAt(a, 1);
+            //String isi = (String) OutputAnak.getValueAt(a, 1);
+            Database db = new Database();
+        ResultSet rs;   
+        int k = 0;
+        rs = null; 
+        try{
+            
+            rs=db.getData("select * from pasien where Pasien.nama='"+HNama+"'");
+            while(rs.next()){
+                DPoli.setText(rs.getString("Poli"));
+                DNama.setText(rs.getString("Nama"));
+                DJK.setText(rs.getString("JK"));
+                DNIK.setText(rs.getString("NIK"));
+                DAlamat.setText(rs.getString("Alamat"));
+                DUmur.setText(rs.getString("Umur"));
+                DKeluhan.setText(rs.getString("Keluhan"));
+                
+                DPoli.setEditable(false);
+                DNama.setEditable(false);
+                DJK.setEditable(false);
+                DNIK.setEditable(false);
+                DAlamat.setEditable(false);
+                DUmur.setEditable(false);
+                DKeluhan.setEditable(false);
+                
+              
+                
+                k++;
+            }
+            rs.close();
+        }catch(Exception e){
+            javax.swing.JOptionPane.showMessageDialog(null, "ERROR:"+e.getMessage());
+        }
+           
+            
+        }catch(NullPointerException npe){
+            JOptionPane.showMessageDialog(null, "Maaf, Baris yang anda klik tidak memiliki data");
+        }catch(Throwable t){
+            JOptionPane.showMessageDialog(null, t.getMessage());
+        }
+        Home.setVisible(false);
+        View.setVisible(true);
+        
+        
+
+    }//GEN-LAST:event_OutputAnakMouseClicked
+
+    private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
+        // TODO add your handling code here:
+        View.setVisible(false);
+        Home.setVisible(true);
+    }//GEN-LAST:event_BackActionPerformed
+
+    private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jTabbedPane1MouseClicked
+
+    private void jLabel30MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel30MouseClicked
+        // TODO add your handling code here:
+        Petugas A = new Petugas();
+        String Nama=Username.getText();
+        String pass=Password.getText();
+        
+        String query="select * from petugas where Username='"+Nama+"' and Password='"+pass+"'";
+       
+        ResultSet rs=new Database().getData(query);
+        
+        int i=0;
+        try {
+            while(rs.next()){    
+                lbNama.setText(Username.getText());
+                i++;           
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(WaitingDisplay.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if(i==0){
+            JOptionPane.showMessageDialog(null,"Maaf, User Belum terdaftar","Login",JOptionPane.INFORMATION_MESSAGE);
+        }else{
+        Home.setVisible(true); 
+        //Layout.setVisible(true);
+        Registrasi.setVisible(false);
+        Login.setVisible(false);
+        
+        }
+    }//GEN-LAST:event_jLabel30MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1438,8 +1595,17 @@ public class WaitingDisplay extends javax.swing.JFrame {
     private javax.swing.JTextArea Address;
     private javax.swing.JTextArea Alamat;
     private javax.swing.JPanel Antrian;
-    private javax.swing.JTextField Birth;
+    private javax.swing.JButton Back;
+    private javax.swing.JTextArea DAlamat;
+    private javax.swing.JTextField DJK;
+    private javax.swing.JTextArea DKeluhan;
+    private javax.swing.JTextField DNIK;
+    private javax.swing.JTextField DNama;
+    private javax.swing.JTextField DPoli;
+    private javax.swing.JTextField DUmur;
     private javax.swing.JButton Daftar;
+    private javax.swing.JTextField DataPNama;
+    private javax.swing.JTextField DataPPoli;
     private javax.swing.JRadioButton Female;
     private javax.swing.JTextField FirstName;
     private javax.swing.ButtonGroup Grup;
@@ -1454,7 +1620,6 @@ public class WaitingDisplay extends javax.swing.JFrame {
     private javax.swing.JPanel Layout;
     private javax.swing.JPanel Login;
     private javax.swing.JRadioButton Male;
-    private javax.swing.JButton Masuk;
     private javax.swing.JButton Mendaftar;
     private javax.swing.JTextField NIK;
     private javax.swing.JTextField Nama;
@@ -1468,30 +1633,40 @@ public class WaitingDisplay extends javax.swing.JFrame {
     private javax.swing.JButton Reset;
     private javax.swing.JTextField Umur;
     private javax.swing.JTextField Username;
+    private javax.swing.JPanel View;
     private javax.swing.JLabel hard;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JFrame jFrame1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel4;
@@ -1508,6 +1683,7 @@ public class WaitingDisplay extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
@@ -1518,6 +1694,8 @@ public class WaitingDisplay extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea jTextArea1;
